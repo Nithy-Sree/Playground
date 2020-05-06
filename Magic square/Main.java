@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n,i,j,s1=0,s2=0,s3=0,set;
+  cin>>n;
+  int a[n][n];
+  for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=n;j++)
+    {
+      cin>>a[i][j];
+    }
+  }
+  for(i=1;i<=n;i++)
+    for(j=1;j<=n;j++)
+      if(i==j)
+        s1=s1+a[i][j];
+  for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=n;j++)
+    {
+      s2=s2+a[i][j];
+    }
+  if(s1==s2)
+    set=1;
+  else{
+    set=0;
+    break;
+  }
+  s2=0;
+  }
+  for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=n;j++)
+    {
+      s3+=a[i][j];
+    }
+    if(s1==s3)
+      set=1;
+    else{
+      set=0;
+      break;
+    }
+    s3=0;
+  }
+  if(set==1)
+    cout<<"Yes";
+  else
+    cout<<"No";
+}
